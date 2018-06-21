@@ -39,7 +39,7 @@ void ports_setup(){
     //PWM
     TRISEbits.TRISE2=false;//HalfBridge R LOW
     TRISEbits.TRISE3=false;//HalfBridge R HIGH
-    TRISEbits.TRISE4=false;//ST
+    //TRISEbits.TRISE4=false;//ST
     TRISEbits.TRISE4=false;//HalfBridge L LOW
     TRISEbits.TRISE5=false;//HalfBridge L HIGH
     //PWM_ENABLE
