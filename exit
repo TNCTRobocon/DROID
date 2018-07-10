@@ -1,0 +1,37 @@
+[33mcommit 3f2c66a44c8755c929d391d4f95867626b5f52d9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: keimoriyama <keischwiiz@gmail.com>
+Date:   Tue Jul 10 17:34:06 2018 +0900
+
+    ADの設定を追加
+
+[33mcommit 54898598b210e49a9a87d395ceab1133a9d4dc03[m[33m ([m[1;31mdroid/master[m[33m)[m
+Author: keimoriyama <keischwiiz@gmail.com>
+Date:   Sun Jul 8 18:39:24 2018 +0900
+
+    Revert "PWMは設定済み ADCの設定を追加 サンプリング周期を決めたい"
+    
+    This reverts commit 5923e85938e03e0fd10f93974be49abbf8182944.
+
+[33mcommit 38721472ad8f59a84b5d5ed3b7c8062e2203172c[m
+Author: keimoriyama <keischwiiz@gmail.com>
+Date:   Thu Jun 21 18:17:37 2018 +0900
+
+    add .gitignore
+
+[33mcommit be31a0aa80f4181f9e566f57aa49a4b8807fee1d[m
+Author: keimoriyama <keischwiiz@gmail.com>
+Date:   Thu Jun 21 17:41:43 2018 +0900
+
+    first contact
+
+[33mcommit ae63daf168b75e6ec73332707fc98382d169c6eb[m
+Author: keimoriyama <keischwiiz@gmail.com>
+Date:   Thu Jun 21 16:58:48 2018 +0900
+
+    first contact
+
+[33mcommit 713f809b6e93c5118a002f3cab1e4586b3a6e741[m
+Author: keimoriyama <keischwiiz@gmail.com>
+Date:   Thu Jun 21 16:43:59 2018 +0900
+
+    PUSHしてみました
