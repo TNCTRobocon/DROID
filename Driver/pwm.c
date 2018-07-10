@@ -32,18 +32,21 @@ void pwm_setup() {
     PTPER = pwm_period >> 1; //period
 
     PWMCON1BITS pcon1;
-    pcon1.PMOD2 = true; //独立モード
+    pcon1.PMOD2 = false; //相補出力モード
     pcon1.PMOD3 = true;
     pcon1.PEN1H = false; //GPIO
     pcon1.PEN1L = false; //GPIO
     pcon1.PEN2H = true; //PWM
-    pcon1.PEN2L = false; //GPIO(LED)
+    pcon1.PEN2L = true; //PWM
     pcon1.PEN3H = true; //PWM
-    pcon1.PEN3L = false; //GPIO(ST)
+    pcon1.PEN3L = true; //PWM
     PWMCON1bits = pcon1;
-
+    
+    DTCON1bits.DTAPS = 0b11;    //8Tcy
+    DTCON1 = 0b11111;   //デッドタイム（最大値）
+    
     PWMCON2 = 0; //invale
-    DTCON1 = 0; //invale
+    //DTCON1 = 0; //invale
     FLTACON = 0; //invale
 
     OVDCONBITS ov;

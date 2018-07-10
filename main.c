@@ -12,7 +12,7 @@ int main(){
 
     driver_setup();
     system_setup();
-    
+    LATDbits.LATD1 = true;//LED_ERROR
     
 
     for (;;){

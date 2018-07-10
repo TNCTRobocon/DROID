@@ -15,35 +15,27 @@ void ports_setup(){
     //ENCODER (Din)
     TRISBbits.TRISB4=true;
     TRISBbits.TRISB5=true;
-    //TRISBbits.TRISB5=true;
     
-    //ADPCFGbits.PCFG3=true;
+    
     ADPCFGbits.PCFG4=true;
     ADPCFGbits.PCFG5=true;
 
     //LED(Dout)
     TRISDbits.TRISD1=false;//LED_ERROR
     TRISDbits.TRISD0=false;//LED_APP
-    //TRISDbits.TRISD0=false;//LED_RX
-    //TRISDbits.TRISD1=false;//LED_TX
     
-    //LATEbits.LATE2=false;
-    //LATBbits.LATB2=false;
     LATDbits.LATD0=false;
     LATDbits.LATD1=false;
     //UART
-    //LATCbits.LATC13=true;
     TRISCbits.TRISC14=true;//RX
     TRISCbits.TRISC13=false;//TX
 
     //PWM
     TRISEbits.TRISE2=false;//HalfBridge R LOW
     TRISEbits.TRISE3=false;//HalfBridge R HIGH
-    //TRISEbits.TRISE4=false;//ST
     TRISEbits.TRISE4=false;//HalfBridge L LOW
     TRISEbits.TRISE5=false;//HalfBridge L HIGH
     //PWM_ENABLE
-    //LATEbits.LATE4=true;//begin
 }
 
 inline uint16_t port_address(){
