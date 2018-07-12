@@ -168,11 +168,11 @@ Program Memory  [Origin = 0x100, Length = 0x7f00]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100               0xd0c          0x1392  (5010)
-_015550c05b446e5c            0xe0c                0x9a            0xe7  (231)
-_048ef7805b446e5c            0xea6                0x60            0x90  (144)
+_036550c05b45a90f            0xe0c                0x9a            0xe7  (231)
+_0491f7805b45a90d            0xea6                0x60            0x90  (144)
 .const                       0xf06                0x8e            0xd5  (213)
-_04830f605b446e5c            0xf94                0x10            0x18  (24)
-_01551e405b446e5c            0xfa4                 0x8             0xc  (12)
+_04880f605b45a90d            0xf94                0x10            0x18  (24)
+_03651e405b45a90f            0xfa4                 0x8             0xc  (12)
 .text                        0xfac              0x1484          0x1ec6  (7878)
 .dinit                      0x2430                0x5e            0x8d  (141)
 .text                       0x248e               0x15a           0x207  (519)
@@ -193,7 +193,7 @@ Data EEPROM Memory  [Origin = 0x7ffc00, Length = 0x400]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-_049649C05b446e53         0x7ffc00                0x80            0x80  (128)
+_049A49C05b45a905         0x7ffc00                0x80            0x80  (128)
 
                  Total data EEPROM used (bytes):           0x80  (128) 12%
 
@@ -1919,14 +1919,14 @@ __c30_signature
  .config_FCKSMEN
                   0xf80000          0x2 build/Pickit/production/Setting/configuration.o
 
-_015550c05b446e5c
+_036550c05b45a90f
                     0x8e0c         0x9a load address 0x000e0c  
- _015550c05b446e5c
+ _036550c05b45a90f
                     0x8e0c         0x9a build/Pickit/production/System/error.o
 
-_048ef7805b446e5c
+_0491f7805b45a90d
                     0x8ea6         0x60 load address 0x000ea6  
- _048ef7805b446e5c
+ _0491f7805b45a90d
                     0x8ea6         0x60 build/Pickit/production/System/shell_bin.o
 
 .const              0x8f06         0x8e load address 0x000f06  
@@ -1940,14 +1940,14 @@ _048ef7805b446e5c
  .const             0x8f92          0x2 build/Pickit/production/Driver/encoder.o
                     0x8f92                  _pos
 
-_04830f605b446e5c
+_04880f605b45a90d
                     0x8f94         0x10 load address 0x000f94  
- _04830f605b446e5c
+ _04880f605b45a90d
                     0x8f94         0x10 build/Pickit/production/System/shell_sbin.o
 
-_01551e405b446e5c
+_03651e405b45a90f
                     0x8fa4          0x8 load address 0x000fa4  
- _01551e405b446e5c
+ _03651e405b45a90f
                     0x8fa4          0x8 build/Pickit/production/System/error.o
 
 .text             0x000fac       0x1484
@@ -2100,8 +2100,8 @@ _01551e405b446e5c
  .text            0x0025dc          0xc build/Pickit/production/main.o
                   0x0025dc                  _main
 
-_049649C05b446e53
+_049A49C05b45a905
                     0xfc00         0x80 load address 0x7ffc00  
- _049649C05b446e53
+ _049A49C05b45a905
                     0xfc00         0x80 build/Pickit/production/Driver/eeprom.o
                     0xfc00                  _system_file
