@@ -4,6 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f5" displayName="app" projectFiles="true">
+        <itemPath>Driver/pid.h</itemPath>
+        <itemPath>Driver/dta_motor.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="Driver" projectFiles="true">
         <itemPath>Driver/driver.h</itemPath>
         <itemPath>Driver/eeprom.h</itemPath>
@@ -24,15 +28,15 @@
         <itemPath>Setting/configuration.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="System" projectFiles="true">
-        <itemPath>System/shell.h</itemPath>
-        <itemPath>System/shell_bin.h</itemPath>
-        <itemPath>System/shell_core.h</itemPath>
-        <itemPath>System/system.h</itemPath>
-        <itemPath>System/motor.h</itemPath>
-        <itemPath>System/shell_sbin.h</itemPath>
-        <itemPath>System/file.h</itemPath>
-        <itemPath>System/error.h</itemPath>
       </logicalFolder>
+      <itemPath>EShell/error.h</itemPath>
+      <itemPath>EShell/file.h</itemPath>
+      <itemPath>EShell/motor.h</itemPath>
+      <itemPath>EShell/shell.h</itemPath>
+      <itemPath>EShell/shell_bin.h</itemPath>
+      <itemPath>EShell/shell_core.h</itemPath>
+      <itemPath>EShell/shell_sbin.h</itemPath>
+      <itemPath>EShell/system.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -41,6 +45,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f4" displayName="app" projectFiles="true">
+        <itemPath>Driver/pid.c</itemPath>
+        <itemPath>Driver/dta_motor.c</itemPath>
+        <itemPath>EShell/motor.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="Driver" projectFiles="true">
         <itemPath>Driver/driver.c</itemPath>
         <itemPath>Driver/eeprom.c</itemPath>
@@ -58,14 +67,13 @@
         <itemPath>Setting/types.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="System" projectFiles="true">
-        <itemPath>System/shell.c</itemPath>
-        <itemPath>System/shell_bin.c</itemPath>
-        <itemPath>System/shell_core.c</itemPath>
-        <itemPath>System/system.c</itemPath>
-        <itemPath>System/motor.c</itemPath>
-        <itemPath>System/shell_sbin.c</itemPath>
-        <itemPath>System/file.c</itemPath>
-        <itemPath>System/error.c</itemPath>
+        <itemPath>EShell/error.c</itemPath>
+        <itemPath>EShell/file.c</itemPath>
+        <itemPath>EShell/shell.c</itemPath>
+        <itemPath>EShell/shell_bin.c</itemPath>
+        <itemPath>EShell/shell_core.c</itemPath>
+        <itemPath>EShell/shell_sbin.c</itemPath>
+        <itemPath>EShell/system.c</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -78,6 +86,7 @@
     <Elem>Driver</Elem>
     <Elem>Reference</Elem>
     <Elem>System</Elem>
+    <Elem>EShell</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -698,7 +707,7 @@
         <targetDevice>dsPIC30F4012</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>PICkit3PlatformTool</platformTool>
+        <platformTool>Simulator</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.33</languageToolchainVersion>
         <platform>3</platform>

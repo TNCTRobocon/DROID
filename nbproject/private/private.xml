@@ -3,20 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/main.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/Driver/adc.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/system.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/shell.c</file>
+            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/Driver/pid.h</file>
+            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/mc.h</file>
+            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/file.h</file>
+            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/shell_sbin.c</file>
             <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/motor.c</file>
             <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/shell_core.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/shell_bin.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/error.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/Driver/pwm.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/file.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/Driver/ports.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/System/shell_sbin.c</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/Driver/adc.h</file>
-            <file>file:/C:/Users/MORIYAMA/MPLABXProjects/MDU_COMON.X/Setting/configuration.h</file>
         </group>
     </open-files>
 </project-private>

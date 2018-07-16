@@ -18,6 +18,5 @@ typedef uint16_t Q16_t;
 #define ReconvertQ15(x) ((x)/INT16_MAX)
 #define ReconvertQ16(x) ((x)/UINT16_MAX)
 
-
 #endif	/* DSP_HELPER_H */
 

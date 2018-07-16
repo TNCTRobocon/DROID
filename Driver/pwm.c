@@ -33,7 +33,7 @@ void pwm_setup() {
 
     PWMCON1BITS pcon1;
     pcon1.PMOD2 = false; //相補出力モード
-    pcon1.PMOD3 = true;
+    pcon1.PMOD3 = false; //相補出力モード
     pcon1.PEN1H = false; //GPIO
     pcon1.PEN1L = false; //GPIO
     pcon1.PEN2H = true; //PWM
@@ -43,7 +43,7 @@ void pwm_setup() {
     PWMCON1bits = pcon1;
     
     DTCON1bits.DTAPS = 0b11;    //8Tcy
-    DTCON1 = 0b11111;   //デッドタイム（最大値）
+    DTCON1 = 0b11111;   //デッドタイム（最大値）計算してない
     
     PWMCON2 = 0; //invale
     //DTCON1 = 0; //invale
@@ -58,8 +58,8 @@ void pwm_setup() {
     PDC3 = 0; //stopping
 
     IFS2bits.PWMIF=false;
-     IPC9bits.PWMIP=6;
-     IEC2bits.PWMIE=true;
+    IPC9bits.PWMIP=6;
+    IEC2bits.PWMIE=true;
     //wake up
     PTCONbits.PTEN = true;
     ST_PIN = false;

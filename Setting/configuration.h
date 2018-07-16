@@ -22,12 +22,12 @@
 //デバイスを選択する
 #define DEVICE_COMMON
 //#define DEVICE_DRAGON
-
+#define ADC_USE
 #if defined(DEVICE_COMMON)
 #define PORT_TYPE_A
 #elif defined(DEVICE_DRAGON)
 #define PORT_TYPE_B
-#define ADC_USE
+
 #endif
 
 
