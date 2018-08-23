@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="62">
+<configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -28,14 +28,14 @@
         <itemPath>Setting/configuration.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="System" projectFiles="true">
+        <itemPath>EShell/shell.h</itemPath>
+        <itemPath>EShell/shell_bin.h</itemPath>
+        <itemPath>EShell/shell_core.h</itemPath>
+        <itemPath>EShell/shell_sbin.h</itemPath>
       </logicalFolder>
       <itemPath>EShell/error.h</itemPath>
       <itemPath>EShell/file.h</itemPath>
       <itemPath>EShell/motor.h</itemPath>
-      <itemPath>EShell/shell.h</itemPath>
-      <itemPath>EShell/shell_bin.h</itemPath>
-      <itemPath>EShell/shell_core.h</itemPath>
-      <itemPath>EShell/shell_sbin.h</itemPath>
       <itemPath>EShell/system.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -101,6 +101,9 @@
         <languageToolchainVersion>1.33</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
+      <packs>
+        <pack name="dsPIC30F_DFP" vendor="Microchip" version="1.0.8"/>
+      </packs>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -712,6 +715,9 @@
         <languageToolchainVersion>1.33</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
+      <packs>
+        <pack name="dsPIC30F_DFP" vendor="Microchip" version="1.0.8"/>
+      </packs>
       <compileType>
         <linkerTool>
           <linkerLibItems>
