@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Driver/pid.c Driver/dta_motor.c EShell/motor.c Driver/driver.c Driver/eeprom.c Driver/encoder.c Driver/ports.c Driver/pwm.c Driver/uart.c Driver/timer.c Driver/timer_asm.s Driver/adc.c Setting/configuration.c main.c Setting/types.c EShell/error.c EShell/file.c EShell/shell.c EShell/shell_bin.c EShell/shell_core.c EShell/shell_sbin.c EShell/system.c
+SOURCEFILES_QUOTED_IF_SPACED=Driver/pid.c Driver/dta_motor.c Driver/driver.c Driver/eeprom.c Driver/encoder.c Driver/ports.c Driver/pwm.c Driver/uart.c Driver/timer.c Driver/timer_asm.s Driver/adc.c Setting/configuration.c main.c Setting/types.c EShell/error.c EShell/file.c EShell/shell.c EShell/shell_bin.c EShell/shell_core.c EShell/shell_sbin.c EShell/system.c Driver/motor.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Driver/pid.o ${OBJECTDIR}/Driver/dta_motor.o ${OBJECTDIR}/EShell/motor.o ${OBJECTDIR}/Driver/driver.o ${OBJECTDIR}/Driver/eeprom.o ${OBJECTDIR}/Driver/encoder.o ${OBJECTDIR}/Driver/ports.o ${OBJECTDIR}/Driver/pwm.o ${OBJECTDIR}/Driver/uart.o ${OBJECTDIR}/Driver/timer.o ${OBJECTDIR}/Driver/timer_asm.o ${OBJECTDIR}/Driver/adc.o ${OBJECTDIR}/Setting/configuration.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Setting/types.o ${OBJECTDIR}/EShell/error.o ${OBJECTDIR}/EShell/file.o ${OBJECTDIR}/EShell/shell.o ${OBJECTDIR}/EShell/shell_bin.o ${OBJECTDIR}/EShell/shell_core.o ${OBJECTDIR}/EShell/shell_sbin.o ${OBJECTDIR}/EShell/system.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Driver/pid.o.d ${OBJECTDIR}/Driver/dta_motor.o.d ${OBJECTDIR}/EShell/motor.o.d ${OBJECTDIR}/Driver/driver.o.d ${OBJECTDIR}/Driver/eeprom.o.d ${OBJECTDIR}/Driver/encoder.o.d ${OBJECTDIR}/Driver/ports.o.d ${OBJECTDIR}/Driver/pwm.o.d ${OBJECTDIR}/Driver/uart.o.d ${OBJECTDIR}/Driver/timer.o.d ${OBJECTDIR}/Driver/timer_asm.o.d ${OBJECTDIR}/Driver/adc.o.d ${OBJECTDIR}/Setting/configuration.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Setting/types.o.d ${OBJECTDIR}/EShell/error.o.d ${OBJECTDIR}/EShell/file.o.d ${OBJECTDIR}/EShell/shell.o.d ${OBJECTDIR}/EShell/shell_bin.o.d ${OBJECTDIR}/EShell/shell_core.o.d ${OBJECTDIR}/EShell/shell_sbin.o.d ${OBJECTDIR}/EShell/system.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Driver/pid.o ${OBJECTDIR}/Driver/dta_motor.o ${OBJECTDIR}/Driver/driver.o ${OBJECTDIR}/Driver/eeprom.o ${OBJECTDIR}/Driver/encoder.o ${OBJECTDIR}/Driver/ports.o ${OBJECTDIR}/Driver/pwm.o ${OBJECTDIR}/Driver/uart.o ${OBJECTDIR}/Driver/timer.o ${OBJECTDIR}/Driver/timer_asm.o ${OBJECTDIR}/Driver/adc.o ${OBJECTDIR}/Setting/configuration.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Setting/types.o ${OBJECTDIR}/EShell/error.o ${OBJECTDIR}/EShell/file.o ${OBJECTDIR}/EShell/shell.o ${OBJECTDIR}/EShell/shell_bin.o ${OBJECTDIR}/EShell/shell_core.o ${OBJECTDIR}/EShell/shell_sbin.o ${OBJECTDIR}/EShell/system.o ${OBJECTDIR}/Driver/motor.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Driver/pid.o.d ${OBJECTDIR}/Driver/dta_motor.o.d ${OBJECTDIR}/Driver/driver.o.d ${OBJECTDIR}/Driver/eeprom.o.d ${OBJECTDIR}/Driver/encoder.o.d ${OBJECTDIR}/Driver/ports.o.d ${OBJECTDIR}/Driver/pwm.o.d ${OBJECTDIR}/Driver/uart.o.d ${OBJECTDIR}/Driver/timer.o.d ${OBJECTDIR}/Driver/timer_asm.o.d ${OBJECTDIR}/Driver/adc.o.d ${OBJECTDIR}/Setting/configuration.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Setting/types.o.d ${OBJECTDIR}/EShell/error.o.d ${OBJECTDIR}/EShell/file.o.d ${OBJECTDIR}/EShell/shell.o.d ${OBJECTDIR}/EShell/shell_bin.o.d ${OBJECTDIR}/EShell/shell_core.o.d ${OBJECTDIR}/EShell/shell_sbin.o.d ${OBJECTDIR}/EShell/system.o.d ${OBJECTDIR}/Driver/motor.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Driver/pid.o ${OBJECTDIR}/Driver/dta_motor.o ${OBJECTDIR}/EShell/motor.o ${OBJECTDIR}/Driver/driver.o ${OBJECTDIR}/Driver/eeprom.o ${OBJECTDIR}/Driver/encoder.o ${OBJECTDIR}/Driver/ports.o ${OBJECTDIR}/Driver/pwm.o ${OBJECTDIR}/Driver/uart.o ${OBJECTDIR}/Driver/timer.o ${OBJECTDIR}/Driver/timer_asm.o ${OBJECTDIR}/Driver/adc.o ${OBJECTDIR}/Setting/configuration.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Setting/types.o ${OBJECTDIR}/EShell/error.o ${OBJECTDIR}/EShell/file.o ${OBJECTDIR}/EShell/shell.o ${OBJECTDIR}/EShell/shell_bin.o ${OBJECTDIR}/EShell/shell_core.o ${OBJECTDIR}/EShell/shell_sbin.o ${OBJECTDIR}/EShell/system.o
+OBJECTFILES=${OBJECTDIR}/Driver/pid.o ${OBJECTDIR}/Driver/dta_motor.o ${OBJECTDIR}/Driver/driver.o ${OBJECTDIR}/Driver/eeprom.o ${OBJECTDIR}/Driver/encoder.o ${OBJECTDIR}/Driver/ports.o ${OBJECTDIR}/Driver/pwm.o ${OBJECTDIR}/Driver/uart.o ${OBJECTDIR}/Driver/timer.o ${OBJECTDIR}/Driver/timer_asm.o ${OBJECTDIR}/Driver/adc.o ${OBJECTDIR}/Setting/configuration.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Setting/types.o ${OBJECTDIR}/EShell/error.o ${OBJECTDIR}/EShell/file.o ${OBJECTDIR}/EShell/shell.o ${OBJECTDIR}/EShell/shell_bin.o ${OBJECTDIR}/EShell/shell_core.o ${OBJECTDIR}/EShell/shell_sbin.o ${OBJECTDIR}/EShell/system.o ${OBJECTDIR}/Driver/motor.o
 
 # Source Files
-SOURCEFILES=Driver/pid.c Driver/dta_motor.c EShell/motor.c Driver/driver.c Driver/eeprom.c Driver/encoder.c Driver/ports.c Driver/pwm.c Driver/uart.c Driver/timer.c Driver/timer_asm.s Driver/adc.c Setting/configuration.c main.c Setting/types.c EShell/error.c EShell/file.c EShell/shell.c EShell/shell_bin.c EShell/shell_core.c EShell/shell_sbin.c EShell/system.c
+SOURCEFILES=Driver/pid.c Driver/dta_motor.c Driver/driver.c Driver/eeprom.c Driver/encoder.c Driver/ports.c Driver/pwm.c Driver/uart.c Driver/timer.c Driver/timer_asm.s Driver/adc.c Setting/configuration.c main.c Setting/types.c EShell/error.c EShell/file.c EShell/shell.c EShell/shell_bin.c EShell/shell_core.c EShell/shell_sbin.c EShell/system.c Driver/motor.c
 
 
 CFLAGS=
@@ -107,13 +107,6 @@ ${OBJECTDIR}/Driver/dta_motor.o: Driver/dta_motor.c  nbproject/Makefile-${CND_CO
 	@${RM} ${OBJECTDIR}/Driver/dta_motor.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Driver/dta_motor.c  -o ${OBJECTDIR}/Driver/dta_motor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Driver/dta_motor.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -fast-math -DXPRJ_Pickit=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/Driver/dta_motor.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
-${OBJECTDIR}/EShell/motor.o: EShell/motor.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/EShell" 
-	@${RM} ${OBJECTDIR}/EShell/motor.o.d 
-	@${RM} ${OBJECTDIR}/EShell/motor.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  EShell/motor.c  -o ${OBJECTDIR}/EShell/motor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/EShell/motor.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -fast-math -DXPRJ_Pickit=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
-	@${FIXDEPS} "${OBJECTDIR}/EShell/motor.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/Driver/driver.o: Driver/driver.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Driver" 
@@ -241,6 +234,13 @@ ${OBJECTDIR}/EShell/system.o: EShell/system.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  EShell/system.c  -o ${OBJECTDIR}/EShell/system.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/EShell/system.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -fast-math -DXPRJ_Pickit=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/EShell/system.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/Driver/motor.o: Driver/motor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Driver" 
+	@${RM} ${OBJECTDIR}/Driver/motor.o.d 
+	@${RM} ${OBJECTDIR}/Driver/motor.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Driver/motor.c  -o ${OBJECTDIR}/Driver/motor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Driver/motor.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -fast-math -DXPRJ_Pickit=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/Driver/motor.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/Driver/pid.o: Driver/pid.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Driver" 
@@ -255,13 +255,6 @@ ${OBJECTDIR}/Driver/dta_motor.o: Driver/dta_motor.c  nbproject/Makefile-${CND_CO
 	@${RM} ${OBJECTDIR}/Driver/dta_motor.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Driver/dta_motor.c  -o ${OBJECTDIR}/Driver/dta_motor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Driver/dta_motor.o.d"        -g -omf=elf -fast-math -DXPRJ_Pickit=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/Driver/dta_motor.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
-${OBJECTDIR}/EShell/motor.o: EShell/motor.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/EShell" 
-	@${RM} ${OBJECTDIR}/EShell/motor.o.d 
-	@${RM} ${OBJECTDIR}/EShell/motor.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  EShell/motor.c  -o ${OBJECTDIR}/EShell/motor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/EShell/motor.o.d"        -g -omf=elf -fast-math -DXPRJ_Pickit=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
-	@${FIXDEPS} "${OBJECTDIR}/EShell/motor.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/Driver/driver.o: Driver/driver.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Driver" 
@@ -388,6 +381,13 @@ ${OBJECTDIR}/EShell/system.o: EShell/system.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/EShell/system.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  EShell/system.c  -o ${OBJECTDIR}/EShell/system.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/EShell/system.o.d"        -g -omf=elf -fast-math -DXPRJ_Pickit=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/EShell/system.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Driver/motor.o: Driver/motor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Driver" 
+	@${RM} ${OBJECTDIR}/Driver/motor.o.d 
+	@${RM} ${OBJECTDIR}/Driver/motor.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Driver/motor.c  -o ${OBJECTDIR}/Driver/motor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Driver/motor.o.d"        -g -omf=elf -fast-math -DXPRJ_Pickit=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/Driver/motor.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

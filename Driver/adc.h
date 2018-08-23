@@ -1,7 +1,7 @@
 #ifndef ADC_H
 #define	ADC_H
 #include "../Helper/dsp_helper.h"
-#include "../System/shell_sbin.h"
+#include "../EShell/shell_sbin.h"
 /*
 typedef enum adc_channels_t{
     ADC_Battery
