@@ -1,0 +1,7 @@
+#gitignore
+*.o
+*.d
+*.hex
+*.map
+*.elf
+*.mk

@@ -33,10 +33,10 @@
         <itemPath>EShell/shell_bin.h</itemPath>
         <itemPath>EShell/shell_core.h</itemPath>
         <itemPath>EShell/shell_sbin.h</itemPath>
+        <itemPath>EShell/system.h</itemPath>
+        <itemPath>EShell/error.h</itemPath>
+        <itemPath>EShell/file.h</itemPath>
       </logicalFolder>
-      <itemPath>EShell/error.h</itemPath>
-      <itemPath>EShell/file.h</itemPath>
-      <itemPath>EShell/system.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
