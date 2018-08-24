@@ -1,14 +1,15 @@
 #include "adc.h"
 #include "../Setting/configuration.h"
 #include "../EShell/shell_sbin.h"
+#include "uart.h"
 #include<stdbool.h>
 
 #define FCY 10000000
 #include <libpic30.h>
-/* configurationよりADC_USEが設定されている場合のみコードが生成されるようにする。
- */
+
 static b_type_t b_type;     //使用するバッテリの種類を入れる変数
 static uint16_t b_cell = 0; //リポだった場合のセルの数
+
 inline void b_type_set(b_type_t type){
     b_type = type;
 }
@@ -68,12 +69,16 @@ Q16_t adc_con(){
     return AD_Value;            //電圧を返す
 }
 
-void _ISR _U1ADCInterrupt(){
-    float vol = lower_voltage(b_cell);
-    if(adc_con() > vol && b_type == B_TYPE_LIPO){
+void B_check(){
+    if(adc_con() > lower_voltage(b_cell) 
+       && b_type == B_TYPE_LIPO){   //リポの電圧が低いときにERROR_LEDを光らす
         LED_ERROR = true;
-    }if(b_type == B_TYPE_SP){
+        uart_bufl("battery error"); //エラーメッセージの表示
+    }else if(b_type == B_TYPE_SP){
         LED_ERROR = false;
     }
+}
+
+void _ISR _U1ADCInterrupt(){
     IFS0bits.ADIF = false;      //割り込みフラグリセット
 }
