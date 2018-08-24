@@ -47,9 +47,8 @@ typedef enum {
 //DSP環境
 
 
-
-
-
+//for timer
+typedef void (*event_t)(void);
 
 #endif	/* TYPES_H */
 

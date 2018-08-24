@@ -51,7 +51,7 @@
 //LED
 #define LED_RX      LATDbits.LATD0
 #define LED_TX      LATDbits.LATD1
-#define LED_ERROR   LATDbits.LATD2
+#define LED_ERROR   LATDbits.LATD1
 #define LED_APP     LATBbits.LATB2
 
 #define PIN_HIGH(x) ((x)=true)

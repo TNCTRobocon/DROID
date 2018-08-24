@@ -1,5 +1,8 @@
 #include "encoder.h"
 #include "p30F4012.h"
+#include "../Setting/types.h"
+#include "mc.h"
+
 
 const int16_t pos=0x7fff;
 static int16_t rate=0;
@@ -7,6 +10,8 @@ static int flag=0;
 static int16_t spin=400; 
 static uint16_t period=1200;//現在100ms(10Hz)_
 static uint32_t ev_period=2000000;
+
+static event_t event=0;
 
 void encoder_setup(){
     
@@ -82,4 +87,8 @@ static uint16_t cnt;
 
 uint32_t get_encoder_period(){
     return ev_period;
+}
+
+void set_event(event_t func){
+    event=func;
 }
