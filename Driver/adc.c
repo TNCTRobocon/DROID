@@ -69,7 +69,7 @@ Q16_t adc_con(){
     return AD_Value;            //電圧を返す
 }
 
-void B_check(){
+void  battery_check(){
     if(adc_con() > lower_voltage(b_cell) 
        && b_type == B_TYPE_LIPO){   //リポの電圧が低いときにERROR_LEDを光らす
         LED_ERROR = true;

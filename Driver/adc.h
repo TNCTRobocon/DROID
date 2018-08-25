@@ -22,7 +22,7 @@ inline void b_cell_set(uint16_t);
 inline uint16_t b_cell_get();
 //Q16_t adc_convert(adc_channels_t);
 
-void B_check();
+void battery_check();
 
 #define adc_battery() adc
 

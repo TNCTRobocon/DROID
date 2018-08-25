@@ -11,7 +11,8 @@
 int main(){
 
     driver_setup();
-    system_setup();    
+    system_setup();
+    uart_begin();
     
     for (;;){
         system_process();
