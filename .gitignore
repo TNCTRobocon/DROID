@@ -1,4 +1,7 @@
 #gitignore
+/build
+/debug
+/dist
 *.o
 *.d
 *.hex
