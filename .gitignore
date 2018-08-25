@@ -2,9 +2,4 @@
 /build
 /debug
 /dist
-*.o
-*.d
-*.hex
-*.map
-*.elf
-*.mk
+/nbproject/private
