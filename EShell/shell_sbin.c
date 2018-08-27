@@ -20,7 +20,7 @@ static PSV excute_pair lst_excute[]={
     {"btype",sbin_btype},
     {"go",motor_link},
     {"stop",motor_link},
-    {"check",battery_check}
+    {"check",sbin_check}
 };
 
 file_t sbin_create(){
@@ -39,7 +39,6 @@ int sbin_rst(int argc,char** argv){
 
 int sbin_sel(int argc,char** argv){
     int16_t address;
-    uart_bufl("OK");
     if (argc>1){
         address=atoi(argv[1]);
         if (address!=address_get()){
@@ -71,4 +70,9 @@ int sbin_btype(int argc,char** argv){
         b_type_set(B_TYPE_SP);
         b_cell_get(0);
     }
+}
+
+void sbin_check(){
+    int battery_status = battery_check();
+    
 }

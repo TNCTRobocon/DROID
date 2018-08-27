@@ -69,13 +69,15 @@ Q16_t adc_con(){
     return AD_Value;            //電圧を返す
 }
 
-void  battery_check(){
+int  battery_check(){
     if(adc_con() > lower_voltage(b_cell) 
        && b_type == B_TYPE_LIPO){   //リポの電圧が低いときにERROR_LEDを光らす
         LED_ERROR = true;
-        uart_bufl("battery error"); //エラーメッセージの表示
+        //uart_bufl("battery error"); //エラーメッセージの表示
+        return -1;
     }else if(b_type == B_TYPE_SP){
         LED_ERROR = false;
+        return 0;
     }
 }
 

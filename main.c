@@ -12,8 +12,8 @@ int main(){
 
     driver_setup();
     system_setup();
-    uart_begin();
-    
+    //uart_begin();
+    //uart_putc(port_address());
     for (;;){
         system_process();
     }

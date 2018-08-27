@@ -1,9 +1,7 @@
-#gitignore
-
 /build 
 *.o
 *.d
 /dist
 *.map
 *.elf
-/nbproject/private
+/nbproject/private/

@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "motor.h"
+#include "pid.h"
 #include "../EShell/shell.h"
 #include "../Driver/pwm.h"
 #include "../Setting/types.h"

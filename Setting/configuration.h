@@ -33,11 +33,11 @@
 
 //アドレス取得　ピン配置
 #if defined(PORT_TYPE_A)
-#define PIN_SEL1() PORTBbits.RB0
+#define PIN_SEL1() PORTBbits.RB2
 #define PIN_SEL2() PORTEbits.RE8
 #define PIN_SEL4() PORTEbits.RE0
 #define PIN_SEL8() PORTEbits.RE1
-#define TRIS_SEL1(X) TRISBbits.TRISB0=(X)
+#define TRIS_SEL1(X) TRISBbits.TRISB2=(X)
 #define TRIS_SEL2(X) TRISEbits.TRISE8=(X)
 #define TRIS_SEL4(X) TRISEbits.TRISE0=(X)
 #define TRIS_SEL8(X) TRISEbits.TRISE1=(X)

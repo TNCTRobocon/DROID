@@ -17,7 +17,7 @@ file_t sbin_create();
 int sbin_rst(int,char**);
 int sbin_sel(int,char**);
 int sbin_btype(int,char**);
-
+void sbin_check();
 
 #endif	/* SHELL_SBIN_H */
 

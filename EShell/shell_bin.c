@@ -8,6 +8,7 @@
 #include "../Setting/configuration.h"
 #include "../Driver/timer.h"
 #include "error.h"
+#include "../motor.h"
 
 static PSV excute_pair lst_bin[] = {
     {"exit", bin_exit},
@@ -20,7 +21,8 @@ static PSV excute_pair lst_bin[] = {
     {"set", bin_set},
     {"get", bin_get},
     {"loop", bin_loop},
-    {"delay", bin_delay}
+    {"delay", bin_delay},
+    {"dt",motor_dt}
 };
 
 file_t bin_create() {

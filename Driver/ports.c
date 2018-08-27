@@ -39,10 +39,10 @@ void ports_setup(){
 }
 
 inline uint16_t port_address(){
-    return  ((!PIN_SEL1())<<0)+
-            ((!PIN_SEL2())<<3)+
-            ((!PIN_SEL4())<<2)+
-            ((!PIN_SEL8())<<1);   
+    return  ((!PIN_SEL1())<<1)+
+            ((!PIN_SEL2())<<0)+
+            ((!PIN_SEL4())<<3)+
+            ((!PIN_SEL8())<<2);   
 }
 
 inline void led_rx(bool fag){
