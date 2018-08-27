@@ -5,3 +5,14 @@
 *.map
 *.elf
 /nbproject/private/
+nbproject/Package-Pickit.bash
+nbproject/project.xml
+nbproject/configurations.xml
+nbproject/Package-simulator.bash
+nbproject/Makefile-variables.mk
+nbproject/Makefile-simulator.mk
+nbproject/Makefile-local-simulator.mk
+nbproject/Makefile-local-Pickit.mk
+nbproject/Makefile-impl.mk
+nbproject/Makefile-genesis.properties
+nbproject/Makefile-Pickit.mk

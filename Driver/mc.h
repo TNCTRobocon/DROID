@@ -9,7 +9,7 @@
 #define	MCC_H
 
 #include "../EShell/file.h"
-#include "../pid.h"
+#include "../Driver/pid.h"
 file_t pid_create();
 
 int motor_pid(int,char**);

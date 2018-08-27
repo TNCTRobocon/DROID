@@ -32,8 +32,8 @@ void pwm_setup() {
     PTPER = pwm_period >> 1; //period
 
     PWMCON1BITS pcon1;
-    pcon1.PMOD2 = true; //相補出力モード
-    pcon1.PMOD3 = true; //相補出力モード
+    pcon1.PMOD2 = false; //相補出力モード
+    pcon1.PMOD3 = false; //相補出力モード
     pcon1.PEN1H = false; //GPIO
     pcon1.PEN1L = false; //GPIO
     pcon1.PEN2H = true; //PWM
