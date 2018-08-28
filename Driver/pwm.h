@@ -24,6 +24,10 @@ inline uint16_t get_pwm_max();
 inline void set_pwm_min(uint16_t);
 inline uint16_t get_pwm_min();
 inline Q16_t  get_pwm_dt();
+void set_step_rate();
+int32_t get_step_rate();
+void get_mc_period(uint32_t *Hz,uint32_t *P);
+inline int16_t pid_rate();
 
 inline void pwm_shutdown(bool fag);
 #endif	/* PWM_H */

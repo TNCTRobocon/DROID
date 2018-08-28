@@ -4,8 +4,15 @@
 #define PWM_PERIOD  (0x063E)//031E)//現在約25kHz
 #define PWM_DT_MAX      (0.95)
 #define PWM_DT_MIN      (0.15)
+#define CNT_PERIOD      (50)//ms
 
+const int16_t poss=0x7fff;
 static uint16_t pwm_period = PWM_PERIOD;
+static int32_t step_rate=0;
+static uint32_t pid_period=(uint32_t)((float)(0x031F)/PWM_PERIOD*24*CNT_PERIOD);//現在50ms
+static bool step_flag=false;
+static uint32_t hz=0; 
+static int16_t rate=0;
 //Q16 Formatで生で保存
 static Q16_t pwm_max = UINT16_MAX*PWM_DT_MAX;
 static Q16_t pwm_max_raw= (uint32_t)(UINT16_MAX*PWM_DT_MAX*PWM_PERIOD)>>16;
@@ -142,4 +149,28 @@ inline Q16_t get_pwm_dt(){
 
 inline void pwm_shutdown(bool fag) {
     ST_PIN = !fag;
+}
+
+float get_period_s(){
+    return (float)(PWM_PERIOD*pid_period/19176)/1000;
+}
+
+float get_period_ms(){
+    return (float)(PWM_PERIOD*pid_period/19176);
+}
+
+int32_t get_step_rate(){
+    return (step_rate+POSCNT-poss);
+}
+
+void set_step_rate(){
+    step_flag=true;
+}
+void get_mc_period(uint32_t *Hz,uint32_t *P){
+     *Hz=hz;
+     *P=pid_period;
+}
+
+inline int16_t pid_rate(){
+    return rate;
 }

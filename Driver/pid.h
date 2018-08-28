@@ -26,7 +26,7 @@ void set_motor_dt();
 void set_motor_speed(int32_t);
 
 Q15_t pid_limit(Q15_t,Q15_t,float,float);
-float float_limit(float,float,float,float);
+//float float_limit(float,float,float,float);
 //void set_p(float);
 //void set_i(float);
 //void set_d(float);

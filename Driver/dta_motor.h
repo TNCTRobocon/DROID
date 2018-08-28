@@ -7,4 +7,6 @@
 
 #ifndef APPLICATION_H//XC_HEADER_TEMPLATE_H
 #define	APPLICATION_H//XC_HEADER_TEMPLATE_H
+void dmotor();
+void motor_ac();
 #endif	/* APPLICATION_H */

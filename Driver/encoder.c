@@ -92,3 +92,8 @@ uint32_t get_encoder_period(){
 void set_event(event_t func){
     event=func;
 }
+
+void mcp_enable(bool check){
+    IEC0bits.CNIE= check;
+    T4CONbits.TON=check;
+}

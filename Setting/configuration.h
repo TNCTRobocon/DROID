@@ -71,6 +71,7 @@
 #define PATH_DEPTH_MAX (8)
 #define QUICK_MAX (8) 
 #define WORD_MAX (32)
+#define SYSTEM_SIZE (32)        //  システムに登録できる機能数
 
 //EEPROM
 #define EEPROM_BUFFER_SIZE (64) //EEPROMの書き込み用バッファ

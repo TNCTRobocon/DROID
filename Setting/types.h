@@ -44,6 +44,11 @@ typedef enum {
     OptionDisenable
 } option_t;
 
+//io.h用
+typedef unsigned short Q3_13;
+typedef unsigned short Q4_12;
+typedef uint32_t Q16_16;
+
 //DSP環境
 
 

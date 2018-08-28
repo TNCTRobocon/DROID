@@ -36,6 +36,10 @@ void ports_setup(){
     TRISEbits.TRISE4=false;//HalfBridge L LOW
     TRISEbits.TRISE5=false;//HalfBridge L HIGH
     //PWM_ENABLE
+    PORTEbits.RE2=false;//HalfBridge R LOW
+    PORTEbits.RE3=false;//HalfBridge R HIGH
+    PORTEbits.RE4=false;//HalfBridge L LOW
+    PORTEbits.RE5=false;//HalfBridge L HIGH
 }
 
 inline uint16_t port_address(){

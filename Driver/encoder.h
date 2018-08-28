@@ -21,7 +21,7 @@ uint32_t get_encoder_period();
 int16_t timer_flag();
 inline void encoder_direction(bool);
 
-
+void mcp_enable(bool check);
 
 
 
