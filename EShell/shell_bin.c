@@ -21,8 +21,8 @@ static PSV excute_pair lst_bin[] = {
     {"set", bin_set},
     {"get", bin_get},
     {"loop", bin_loop},
-    {"delay", bin_delay},
-    {"dt",motor_dt}
+    {"delay", bin_delay}//,
+    //{"dt",motor_dt}
 };
 
 file_t bin_create() {

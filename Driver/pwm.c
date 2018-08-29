@@ -83,16 +83,22 @@ inline uint16_t dt_limit(uint16_t var) {
 }
 
 inline void pwm_dt_direct(uint16_t dt, triple_t dir) {
+    float dt_2,dt_3,tmp;
     //データ確認
     dt = dt_limit(dt);
-    dir = (dt == 0) ? zero : dir;
-
+    //dir = (dt == 0) ? zero : dir;
+    tmp = dt / 2;
+    
     if (dir == plus) {
-        PDC2 = dt;
-        PDC3 = 0;
+        dt_2 = dt + tmp;
+        dt_3 = dt - tmp;
+        PDC2 = dt_2;
+        PDC3 = dt_3;
     } else if (dir == minus) {
-        PDC2 = 0;
-        PDC3 = dt;
+        dt_2 = dt - tmp;
+        dt_3 = dt + tmp;
+        PDC2 = dt_2;
+        PDC3 = dt_3;
     } else {
         PDC2 = 0;
         PDC3 = 0;
