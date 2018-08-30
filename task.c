@@ -9,8 +9,8 @@
 
 void task_setup() {
     system_setup();
-    io_setup();
     transmit_init();
+    
 }
 
 void process_old(){
@@ -31,5 +31,3 @@ void transmit() {
         system_decode(line);
     }
 }
-
-

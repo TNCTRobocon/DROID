@@ -26,7 +26,7 @@ bool driver_setup(){
     timer23_setup();
     uart_setup();
     adc_setup();
-    io_setup();
+    //io_setup();
     
     pwm_shutdown(false); 
     return false;

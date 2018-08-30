@@ -39,6 +39,7 @@ void pwm_setup() {
     PTPER = pwm_period >> 1; //period
 
     PWMCON1BITS pcon1;
+    //pcon1.PMOD1 = false; //相補出力モード
     pcon1.PMOD2 = false; //相補出力モード
     pcon1.PMOD3 = false; //相補出力モード
     pcon1.PEN1H = false; //GPIO
@@ -58,11 +59,12 @@ void pwm_setup() {
 
     OVDCONBITS ov;
     ov.POVD2H = true; //form pwm generator
-    ov.POVD3H = true;
+    ov.POVD1H = true;
+    //ov.POVD3H = true;
     OVDCONbits = ov;
-
+    PDC1 = 0;
     PDC2 = 0;
-    PDC3 = 0; //stopping
+    //PDC3 = 0; //stopping
 
     IFS2bits.PWMIF=false;
     IPC9bits.PWMIP=6;
