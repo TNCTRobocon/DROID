@@ -11,7 +11,6 @@
 int main(){
 
     driver_setup();
-    //task_setup();
     system_setup();
     for (;;){
         system_process();
