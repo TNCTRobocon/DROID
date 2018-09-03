@@ -6,7 +6,6 @@
 *.elf
 /nbproject/private/
 nbproject/Package-Pickit.bash
-nbproject/project.xml
 nbproject/configurations.xml
 nbproject/Package-simulator.bash
 nbproject/Makefile-variables.mk
