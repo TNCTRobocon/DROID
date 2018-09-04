@@ -8,7 +8,7 @@
 #include "../Setting/configuration.h"
 #include "../Driver/timer.h"
 #include "error.h"
-#include "../Driver/motor.h"
+#include "../App/motor.h"
 
 static PSV excute_pair lst_bin[] = {
     {"exit", bin_exit},

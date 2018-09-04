@@ -1,7 +1,7 @@
 #include "shell.h"
 #include "shell_bin.h"
-#include "../Driver/motor.h"
-#include "../io.h"
+#include "../App/motor.h"
+#include "../Driver/io.h"
 #include "shell_sbin.h"
 #include <stddef.h>
 

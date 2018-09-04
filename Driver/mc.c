@@ -11,6 +11,7 @@
 #include "../EShell/shell.h"
 #include "../Driver/pwm.h"
 #include "../Setting/types.h"
+#include "encoder.h"
 
 const char link_rady[]="rady";
 const char link_go[]="go";
