@@ -1,4 +1,5 @@
 #include "io.h"
+#include "EShell/shell_core.h"
 #include "Driver/pid.h"
 #include "EShell/system.h"
 #include "Driver/uart.h"
@@ -43,10 +44,32 @@ const char *group_set[] = {cmp_addr_ofset,cmp_pwm_max,cmp_pwm_min,cmp_pwm_period
 
 int32_t link_speed=0;
 bool link_enable=false;
-
+//登録
+    static PSV excute_pair lst_io[] = {
+    {io_get, "get"},
+    {io_set, "set"},
+    {option_test, "test"},
+    {motor_dt, "dt"},
+    {motor_dt_automatic,"dta"},
+    {pid_mode,"mode"},
+    {motor_control,"mc"},
+    {interval_timer_mc,"ev"},
+    {interval_timer_mcp,"evp"},
+    {period_encoder,"period"},
+    {mc_rady,"rady"},
+    {mc_go, "go"},
+    {mc_stop, "stop"}
+    };
+    
+    file_t io_create() {
+    file_t io;
+    io = directory_create("io");
+    directory_insert_excute(io,lst_io,sizeof(lst_io)/sizeof(lst_io[0]));
+    return io;
+}
+    
 void io_setup() {
-    //登録
-    system_insert(io_get, "get");
+    /*system_insert(io_get, "get");
     system_insert(io_set, "set");
     system_insert(option_test, "test");
     system_insert(motor_dt, "dt");
@@ -60,8 +83,8 @@ void io_setup() {
     system_insert(period_encoder,"period");
     system_insert(mc_rady,"rady");
     system_add(mc_go, "go", OptionSystem);
-    system_add(mc_stop, "stop", OptionSystem);
-}
+    system_add(mc_stop, "stop", OptionSystem);*/
+    }
 
 int io_get(int argc, char** argv) {
     //最初の要素を削除;
@@ -333,7 +356,6 @@ int motor_control_period(int argc, char** argv){
         set_motor_speed(speed);
         return 0;
 }
-
 
 int interval_timer_mc(int argc, char** argv){
     char buf[8];

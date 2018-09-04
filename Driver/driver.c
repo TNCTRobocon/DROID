@@ -7,6 +7,7 @@
 #include "eeprom.h"
 #include "timer.h"
 #include "adc.h"
+#include "io.h"
 
 
 bool driver_setup(){
@@ -25,7 +26,6 @@ bool driver_setup(){
     timer23_setup();
     uart_setup();
     adc_setup();
-    
     
     pwm_shutdown(false); 
     return false;

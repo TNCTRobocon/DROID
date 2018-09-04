@@ -1,6 +1,7 @@
 #include "shell.h"
 #include "shell_bin.h"
-//#include "motor.h"
+#include "../Driver/motor.h"
+#include "../io.h"
 #include "shell_sbin.h"
 #include <stddef.h>
 
@@ -18,7 +19,7 @@ static void shell_listen(){
 }
 
 static void shell_selected(){
-    file_t root,env,bin,mtr,sbin;
+    file_t root,env,bin,mtr,sbin,io;
     path_init();//これまでの構成を破棄
     root=path_root();
     directory_insert(root,bin=bin_create());
@@ -26,8 +27,11 @@ static void shell_selected(){
     directory_insert(root,sbin=sbin_create());
     directory_registor(sbin);
     
-    //directory_insert(root,mtr=motor_create());
-    //directory_registor(mtr);
+    directory_insert(root,mtr=motor_create());
+    directory_registor(mtr);
+    
+    directory_insert(root,io=io_create());
+    directory_registor(io);
     
     directory_insert(root, env = directory_create("env"));
     {

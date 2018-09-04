@@ -39,14 +39,15 @@ void pwm_setup() {
     PTPER = pwm_period >> 1; //period
 
     PWMCON1BITS pcon1;
-    pcon1.PMOD2 = false; //相補出力モード
-    pcon1.PMOD3 = false; //相補出力モード
-    pcon1.PEN1H = false; //GPIO
-    pcon1.PEN1L = false; //GPIO
-    pcon1.PEN2H = true; //PWM
-    pcon1.PEN2L = true; //PWM
-    pcon1.PEN3H = true; //PWM
-    pcon1.PEN3L = true; //PWM
+    
+    pcon1.PMOD2 = false;     //相補出力モード
+    pcon1.PMOD3 = false;     //相補出力モード
+    pcon1.PEN1H = false;    //GPIO
+    pcon1.PEN1L = false;    //GPIO
+    pcon1.PEN2H = true;     //PWM
+    pcon1.PEN2L = true;     //PWM
+    pcon1.PEN3H = true;     //PWM
+    pcon1.PEN3L = true;     //PWM
     PWMCON1bits = pcon1;
     
     DTCON1bits.DTAPS = 0b11;    //8Tcy
@@ -57,10 +58,17 @@ void pwm_setup() {
     FLTACON = 0; //invale
 
     OVDCONBITS ov;
-    ov.POVD2H = true; //form pwm generator
+    ov.POVD2H = true;
+    ov.POVD2L = false;
     ov.POVD3H = true;
+    ov.POVD3L = false;
+    ov.POUT2H = false;   //POVD2HがクリアされたらPWM2Hがインアクティブ
+    ov.POUT2L = true;    //POVD2LがクリアされたらPWM2Lがインアクティブ
+    ov.POUT3H = false;   //POVD3HがクリアされたらPWM3Hがインアクティブ
+    ov.POUT3L = true;    //POVD3LがクリアされたらPWM3Lがインアクティブ
+    
     OVDCONbits = ov;
-
+    
     PDC2 = 0;
     PDC3 = 0; //stopping
 
@@ -86,14 +94,25 @@ inline void pwm_dt_direct(uint16_t dt, triple_t dir) {
     //データ確認
     dt = dt_limit(dt);
     dir = (dt == 0) ? zero : dir;
-
     if (dir == plus) {
+        OVDCONbits.POVD2H = true;   //form pwm generator
+        OVDCONbits.POVD2L = true;
+        OVDCONbits.POUT3L = false;
         PDC2 = dt;
         PDC3 = 0;
     } else if (dir == minus) {
+        OVDCONbits.POVD3H = true;
+        OVDCONbits.POVD3L = true;
+        OVDCONbits.POUT2L = false;
         PDC2 = 0;
         PDC3 = dt;
     } else {
+        OVDCONbits.POVD2H = false;   //form pwm generator
+        OVDCONbits.POVD3H = false;
+        OVDCONbits.POVD3L = false;
+        OVDCONbits.POVD2L = false;
+        OVDCONbits.POUT2L = true;
+        OVDCONbits.POUT3L = true;
         PDC2 = 0;
         PDC3 = 0;
     }

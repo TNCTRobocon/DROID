@@ -6,13 +6,12 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "Driver/timer.h"
-
+#include "task.h"
 
 int main(){
 
     driver_setup();
     system_setup();
-    
     for (;;){
         system_process();
     }

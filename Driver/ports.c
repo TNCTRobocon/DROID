@@ -3,7 +3,7 @@
 
 void ports_setup(){
     //Switch (STOP)
-    TRISEbits.TRISE8=true;
+    //TRISEbits.TRISE8=true;
     //Switch Address (Din)
     TRIS_SEL1(true);
     TRIS_SEL2(true);
@@ -31,11 +31,15 @@ void ports_setup(){
     TRISCbits.TRISC13=false;//TX
 
     //PWM
+    //TRISEbits.TRISE0=false;//HalfBridge L LOW
+    //TRISEbits.TRISE1=false;//HalfBridge L HIGH
     TRISEbits.TRISE2=false;//HalfBridge R LOW
     TRISEbits.TRISE3=false;//HalfBridge R HIGH
     TRISEbits.TRISE4=false;//HalfBridge L LOW
     TRISEbits.TRISE5=false;//HalfBridge L HIGH
     //PWM_ENABLE
+    //PORTEbits.RE0=false;//HalfBridge L LOW
+    //PORTEbits.RE1=false;//HalfBridge L HIGH
     PORTEbits.RE2=false;//HalfBridge R LOW
     PORTEbits.RE3=false;//HalfBridge R HIGH
     PORTEbits.RE4=false;//HalfBridge L LOW
