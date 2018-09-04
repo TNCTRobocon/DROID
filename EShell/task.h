@@ -17,6 +17,7 @@ void transmit_init();
 
 void transmit();
 
+char int_to_decimal( int val, char *a, int radix );
 
 #endif	/* TASK_H */
 

@@ -128,7 +128,7 @@ int io_get(int argc, char** argv) {
                 int port;
                 idx = atoi(argv[1]);
                 port = port_get(idx);
-                itoa(buf, port, 16);
+                int_to_decimal(buf, port, 16);
                 uart_bufs("port.idx(");
                 uart_bufc('0' + idx);
                 uart_bufs("):");
@@ -138,34 +138,34 @@ int io_get(int argc, char** argv) {
                 argv++; //go more one!!
             } else if (!strcmp(cmp, cmp_addr_value)) {
                 uart_bufs("addr:");
-                itoa(buf, system_address(), 10);
+                int_to_decimal(buf, system_address(), 10);
                 uart_bufs(buf);
             } else if (!strcmp(cmp, cmp_addr_ofset)) {
                 uart_bufs("addr.ofset:");
-                itoa(buf, system_address_ofset, 10);
+                int_to_decimal(buf, system_address_ofset, 10);
                 uart_bufs(buf);
             } else if (!strcmp(cmp, cmp_pwm_period)) {
                 uart_bufs("pwm.period:");
-                itoa(buf, (get_pwm_period()/10), 10);
+                int_to_decimal(buf, (get_pwm_period()/10), 10);
                 uart_bufs(buf);
                 uart_bufc('0'+get_pwm_period()%10);
             } else if (!strcmp(cmp, cmp_pwm_max)) {
                 Q16_t max =get_pwm_max();//UINT16_MAX倍されている
                 int var = max/(UINT16_MAX/1000);//1000分率になる。
                 uart_bufs("pwm.max:0.");
-                itoa(buf,var,10);
+                int_to_decimal(buf,var,10);
                 uart_bufs(buf);
             } else if (!strcmp(cmp, cmp_pwm_min)) {
                 Q16_t min =get_pwm_min();//UINT16_MAX倍されている
                 int var = min/(UINT16_MAX/1000);//1000分率になる。
                 uart_bufs("pwm.min:0.");
-                itoa(buf,var,10);
+                int_to_decimal(buf,var,10);
                 uart_bufs(buf);
             }else if (!strcmp(cmp,cmp_pwm_dt)){
                 Q16_t dt=get_pwm_dt();
                 int var =dt/(UINT16_MAX/1000);
                 uart_bufs("pwm.dt:");
-                itoa(buf,var,10);
+                int_to_decimal(buf,var,10);
                 uart_bufs(buf);
             }else if (!strcmp(cmp,cmp_mc_p)){
                 float var=get_pid('p');
@@ -189,18 +189,18 @@ int io_get(int argc, char** argv) {
                 get_mc_period(&hz_get,&period_get);
                 int var =period_get;
                 uart_bufs("mc.period:0x");
-                itoa(buf,var,10);
+                int_to_decimal(buf,var,10);
                 uart_bufs(buf);
                 uart_bufs("(");
                 var =hz_get;
-                itoa(buf,var,10);
+                int_to_decimal(buf,var,10);
                 uart_bufs(buf);
                  uart_bufs("us?)");
             }else if (!strcmp(cmp,cmp_encoder_speed)){
                 int16_t speed=pid_rate();
                 int var =speed;
                 uart_bufs("encoder.speed:");
-                itoa(buf,var,10);
+                int_to_decimal(buf,var,10);
                 uart_bufs(buf);
             }else if (!strcmp(cmp,cmp_encoder_direction)){
                 int16_t speed=pid_rate();
@@ -223,7 +223,7 @@ int io_get(int argc, char** argv) {
                 uart_bufs("0");
                 n=n/10;
                 }
-                itoa(buf,var,10);
+                int_to_decimal(buf,var,10);
                 uart_bufs("link ");
                 uart_bufs(buf);
                 
@@ -365,7 +365,7 @@ int interval_timer_mc(int argc, char** argv){
         //itoa(buf,get_t_step(), 10);
         //itoa(buf,get_step_rate(), 10);
         //itoa(buf,get_d_step(), 10);
-        itoa(buf,encoder_speed_raw(), 10);
+        int_to_decimal(buf,encoder_speed_raw(), 10);
         uart_putl(buf);
         do {
         a=0x0000FFFF&TMR2;
@@ -386,7 +386,7 @@ int interval_timer_mcp(int argc, char** argv){
     uint32_t period;//us(20*x)
     get_mc_period(&a,&period);
     while(uart_depth() == 0){
-        itoa(buf,encoder_speed_raw(), 10);
+        int_to_decimal(buf,encoder_speed_raw(), 10);
         uart_putl(buf);
         do {
         a=0x0000FFFF&TMR2;

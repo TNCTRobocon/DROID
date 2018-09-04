@@ -10,6 +10,9 @@
 #include "error.h"
 #include "../App/motor.h"
 
+#define FCY 12000000
+#include <libpic30.h>
+
 static PSV excute_pair lst_bin[] = {
     {"exit", bin_exit},
     {"echo", bin_echo},
@@ -60,7 +63,7 @@ int bin_ls(int argc, char** argv) {
             for (it = current->child; it != NULL; it = it->next) {
                 uart_bufs(it->name);
                 uart_bufc('[');
-                uart_bufs(itoa(buf, it->fags&AccessMask, 16));
+                uart_bufs(int_to_decimal(buf, it->fags&AccessMask, 16));
                 uart_bufs("]\r");
             }
         }
@@ -135,11 +138,11 @@ int bin_system(int argc, char** argv) {
     char buf[CMD_LENGTH];
     uart_bufl("memory");
     uart_bufs("used:");
-    uart_bufl(itoa(buf, file_used(), 10));
+    uart_bufl(int_to_decimal(buf, file_used(), 10));
     uart_bufs("free:");
-    uart_bufl(itoa(buf, file_free(), 10));
+    uart_bufl(int_to_decimal(buf, file_free(), 10));
     uart_bufs("memory[KB]");
-    uart_bufl(itoa(buf,file_memory(),10));
+    uart_bufl(int_to_decimal(buf,file_memory(),10));
     uart_flush();
     return 0;
 }
@@ -199,10 +202,10 @@ int bin_get(int argc, char** argv) {
                     case FileTypeNone:
                         return error_print(ERROR_FILE_TYPE_NONE);
                     case FileTypeInteger:
-                        uart_bufs(itoa(buf, *file->ptr_int, 10));
+                        uart_bufs(int_to_decimal(buf, *file->ptr_int, 10));
                         break;
                     case FileTypeFloat:
-                        uart_bufs(itoa(buf, (int) *file->ptr_float, 10));
+                        uart_bufs(int_to_decimal(buf, (int) *file->ptr_float, 10));
                         break;
                     default:
                         return error_print(ERROR_NOT_SURPPORT);
@@ -256,12 +259,12 @@ int bin_delay(int argc, char** argv) {
         if (time != 0) {//時間指定あり
             if (argc > 2) {
                 if (argv[2][0] == '-') {//オプション指定あり
-                    if (!strcmp(argv[2], "-ns")) {
+                    /*if (!strcmp(argv[2], "-ns")) {
                         delay_ns(time);
-                    } else if (!strcmp(argv[2], "-us")) {
-                        delay_us(time);
+                    } else */if (!strcmp(argv[2], "-us")) {
+                        __delay_us(time);
                     } else if (!strcmp(argv[2], "-ms")) {
-                        delay_ms(time);
+                        __delay_ms(time);
                     } else {
                         return error_print(ERROR_INTPUT_FRAUD);
                     }
@@ -271,18 +274,18 @@ int bin_delay(int argc, char** argv) {
                         return 0;
                     }
                 }else{
-                    delay_us(time);//オプション指定なし
+                    __delay_us(time);//オプション指定なし
                     return shell_system_s(argc - 2, argv + 2);
                 }
             }else{
-                delay_us(time);
+                __delay_us(time);
                 return 0;
             }
         } else {//  時間指定なし
-            delay_us(def);
+            __delay_us(def);
             return shell_system_s(argc - 1, argv + 1);
         }
     }
-    delay_us(def);
+    __delay_us(def);
     return 0;
 }
