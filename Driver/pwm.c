@@ -65,7 +65,7 @@ void pwm_setup() {
     ov.POUT2H = false;   //POVD2HがクリアされたらPWM2Hがインアクティブ
     ov.POUT2L = true;    //POVD2LがクリアされたらPWM2Lがインアクティブ
     ov.POUT3H = false;   //POVD3HがクリアされたらPWM3Hがインアクティブ
-    ov.POUT3L = true;    //POVD3LがクリアされたらPWM3Lがインアクティブ
+    ov.POUT3L = false;    //POVD3LがクリアされたらPWM3Lがインアクティブ
     
     OVDCONbits = ov;
     
@@ -97,13 +97,13 @@ inline void pwm_dt_direct(uint16_t dt, triple_t dir) {
     if (dir == plus) {
         OVDCONbits.POVD2H = true;   //form pwm generator
         OVDCONbits.POVD2L = true;
-        OVDCONbits.POUT3L = false;
+        OVDCONbits.POUT3L = true;
         PDC2 = dt;
         PDC3 = 0;
     } else if (dir == minus) {
         OVDCONbits.POVD3H = true;
         OVDCONbits.POVD3L = true;
-        OVDCONbits.POUT2L = false;
+        OVDCONbits.POUT2L = true;
         PDC2 = 0;
         PDC3 = dt;
     } else {
@@ -111,8 +111,8 @@ inline void pwm_dt_direct(uint16_t dt, triple_t dir) {
         OVDCONbits.POVD3H = false;
         OVDCONbits.POVD3L = false;
         OVDCONbits.POVD2L = false;
-        OVDCONbits.POUT2L = true;
-        OVDCONbits.POUT3L = true;
+        OVDCONbits.POUT2L = false;
+        OVDCONbits.POUT3L = false;
         PDC2 = 0;
         PDC3 = 0;
     }

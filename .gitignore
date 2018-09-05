@@ -15,3 +15,6 @@ nbproject/Makefile-local-Pickit.mk
 nbproject/Makefile-impl.mk
 nbproject/Makefile-genesis.properties
 nbproject/Makefile-Pickit.mk
+nbproject/Package-default.bash
+nbproject/Makefile-local-default.mk
+nbproject/Makefile-default.mk
