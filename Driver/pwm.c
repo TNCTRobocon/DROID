@@ -58,12 +58,12 @@ void pwm_setup() {
     FLTACON = 0; //invale
 
     OVDCONBITS ov;
-    ov.POVD2H = true;
-    ov.POVD2L = false;
-    ov.POVD3H = true;
-    ov.POVD3L = false;
+    ov.POVD2H = false;   //overwrite   
+    ov.POVD2L = false;   //出力をオーバーライト
+    ov.POVD3H = false;
+    ov.POVD3L = false;   //ローサイド側が負論理
     ov.POUT2H = false;   //POVD2HがクリアされたらPWM2Hがインアクティブ
-    ov.POUT2L = true;    //POVD2LがクリアされたらPWM2Lがインアクティブ
+    ov.POUT2L = false;    //POVD2LがクリアされたらPWM2Lがインアクティブ
     ov.POUT3H = false;   //POVD3HがクリアされたらPWM3Hがインアクティブ
     ov.POUT3L = false;    //POVD3LがクリアされたらPWM3Lがインアクティブ
     
@@ -95,26 +95,37 @@ inline void pwm_dt_direct(uint16_t dt, triple_t dir) {
     dt = dt_limit(dt);
     dir = (dt == 0) ? zero : dir;
     if (dir == plus) {
-        OVDCONbits.POVD2H = true;   //form pwm generator
-        OVDCONbits.POVD2L = true;
-        OVDCONbits.POUT3L = true;
+        OVDCONbits.POVD2H = true;   //2HをPWM
+        OVDCONbits.POVD2L = true;   //2LをPWM
+        OVDCONbits.POVD3H = false;  //3Hにオーバーライト
+        OVDCONbits.POVD3L = false;  //3Lにオーバーライト
+        OVDCONbits.POUT3L = true;  //3LにHIGHを出力
+        OVDCONbits.POUT2H = false;  //2HにLOWを出力
         PDC2 = dt;
         PDC3 = 0;
+        uart_putl("PWM2 ON");
     } else if (dir == minus) {
-        OVDCONbits.POVD3H = true;
-        OVDCONbits.POVD3L = true;
-        OVDCONbits.POUT2L = true;
+        OVDCONbits.POVD3H = true;   //3HはPWM
+        OVDCONbits.POVD3L = true;   //3LはPWM
+        OVDCONbits.POVD2H = false;  //2Hにオーバーライト
+        OVDCONbits.POVD2L = false;  //2Lにオーバーライト
+        OVDCONbits.POUT2L = true;   //2LにHIGHを出力
+        OVDCONbits.POUT2H = false;  //2HにLOWを出力
         PDC2 = 0;
         PDC3 = dt;
+        uart_putl("PWM3 ON");
     } else {
-        OVDCONbits.POVD2H = false;   //form pwm generator
-        OVDCONbits.POVD3H = false;
-        OVDCONbits.POVD3L = false;
-        OVDCONbits.POVD2L = false;
-        OVDCONbits.POUT2L = false;
-        OVDCONbits.POUT3L = false;
+        OVDCONbits.POVD2H = false;  //2Hにオーバーライト
+        OVDCONbits.POVD3H = false;  //3Hにオーバーライト
+        OVDCONbits.POVD3L = false;  //3Lにオーバーライト
+        OVDCONbits.POVD2L = false;  //2Lにオーバーライト
+        OVDCONbits.POUT2H = true;   //2HにHIGH
+        OVDCONbits.POUT2L = false;  //2LにLOW
+        OVDCONbits.POUT3H = true;   //3HにHIGH
+        OVDCONbits.POUT3L = false;  //3LにLOW
         PDC2 = 0;
         PDC3 = 0;
+        uart_putl("PWM OFF");
     }
 }
 

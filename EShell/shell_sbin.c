@@ -7,6 +7,7 @@
 #include "../Setting/configuration.h"
 #include "../Driver/adc.h"
 #include "../Driver/mc.h"
+//#include "../Helper/future.h"
 
 static int16_t address_ofset=+16;
 
@@ -20,7 +21,8 @@ static PSV excute_pair lst_excute[]={
     {"btype",sbin_btype},
     {"go",motor_link},
     {"stop",motor_link},
-    {"check",sbin_check}
+    {"check",sbin_check}//,
+    //{"future",send_status}
 };
 
 file_t sbin_create(){
