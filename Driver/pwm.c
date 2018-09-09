@@ -99,8 +99,8 @@ inline void pwm_dt_direct(uint16_t dt, triple_t dir) {
         OVDCONbits.POVD2L = true;   //2LをPWM
         OVDCONbits.POVD3H = false;  //3Hにオーバーライト
         OVDCONbits.POVD3L = false;  //3Lにオーバーライト
-        OVDCONbits.POUT3L = true;  //3LにHIGHを出力
-        OVDCONbits.POUT2H = false;  //2HにLOWを出力
+        OVDCONbits.POUT3L = true;   //3LにHIGHを出力
+        OVDCONbits.POUT3H = false;  //2HにLOWを出力
         PDC2 = dt;
         PDC3 = 0;
         uart_putl("PWM2 ON");
@@ -125,7 +125,7 @@ inline void pwm_dt_direct(uint16_t dt, triple_t dir) {
         OVDCONbits.POUT3L = false;  //3LにLOW
         PDC2 = 0;
         PDC3 = 0;
-        uart_putl("PWM OFF");
+        uart_putl("MOTOR STOP");
     }
 }
 
